@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Emerka Marketing | Lluvia Particulas</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/Style.css" />
+    </head>
+
+    <body>
+        <section>
+            <audio autoplay="autoplay" loop="loop">
+                <source src="audio/It Will Rain.mp3" type="audio/mp3" />
+                <source src="audio/It Will Rain.ogg" type="audio/ogg" />
+            </audio>
+
+            <header>
+                <div class="title">
+                    <nav class="grid-container">
+                        <img style="margin-right: 600px; " src="img/logo.png" style=""></img>
+                        <div><img src="../Lluvia Particulas/img/home.png"><a href="index.html">Home</a></div>
+                    </nav>
+                </div>
+            </header>
+
+            <article>
+                <canvas id="mi-canvas"></canvas>
+            </article>
+
+            <footer>
+                <p>Coatzacoalcos, Ver. Calle Juventino Rosas #3,006 B, Depto. #308, Col. Playa Sol, CP 96518</p>
+                <p>921 140 0440   eovalle@emerka.com.mx</p>
+            </footer>
+        </section>
+
+        <script src='snowflakes.js'></script>
+        <script>
+            var canvas = document.getElementById('mi-canvas');
+            canvas.width = window.screen.availWidth;
+            canvas.height = window.screen.availHeight;
+
+            var imagen = new Image();
+            imagen.onload = function(){
+                var rain = new Rain("mi-canvas", imagen);
+                rain.let_it_snow();
+            }
+            imagen.src = "snowflake.png";
+        </script>
+    </body>
+</html>
